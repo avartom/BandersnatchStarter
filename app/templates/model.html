@@ -1,34 +1,54 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Bandersnatch Model</h1>
+    <h1>Health Insurance Claim Predictor</h1>
     <p>{{ info | safe }}</p>
 
     <h2>Prediction Basis</h2>
     <form id="form" method="post" action="{{ url_for('model') }}">
         <p><label>
-            Level: <input name="level" value="{{ level }}"/>
+            Age: <input name="age" value="{{ age }}"/>
         </label></p>
         <br class="clear">
         <p><label>
-            Health: <input name="health" value="{{ health }}"/>
+            Gender: 0 Female, 1 Male <input name="gender" value="{{ gender }}"/>
         </label></p>
         <br class="clear">
         <p><label>
-            Energy: <input name="energy" value="{{ energy }}"/>
+            BMI: <input name="bmi" value="{{ bmi }}"/>
         </label></p>
         <br class="clear">
         <p><label>
-            Sanity: <input name="sanity" value="{{ sanity }}"/>
+            Bloodpressure: <input name="bloodpressure" value="{{ bloodpressure }}"/>
         </label></p>
         <br class="clear">
-        <button type="submit">Predict Rarity</button>
+        <p><label>
+            Diabetic: 0 No, 1 Yes <input name="diabetic" value="{{ diabetic }}"/>
+        </label></p>
+        <br class="clear">
+        <p><label>
+            Children: <input name="children" value="{{ children }}"/>
+        </label></p>
+        <br class="clear">
+        <p><label>
+            Smoker: 0 No, 1 Yes <input name="smoker" value="{{ smoker }}"/>
+        </label></p>
+        <br class="clear">
+        <p><label>
+            Region: 0 Northeast, 1 Northwest, 2 Southeast, 3 Southwest <input name="region" value="{{ region }}"/>
+        </label></p>
+        <br class="clear">
+        <button type="submit"> Prediction </button>
         <br class="clear">
     </form>
 
     <h3>
-        Prediction: {{ prediction }}
+        0 indicates claims less than or equal to $20,000 
         <br>
-        Confidence: {{ confidence }}
+        1 indicates claims greater than $20,000
+        <br>
+        Prediction: {{ Prediction }}
+        <br>
+        Accuracy: {{ confidence }}
     </h3>
 
 {% endblock %}
