@@ -1,6 +1,18 @@
 from altair import Chart, Tooltip
 
 def chart(df, x, y, target) -> Chart:
+    """
+        Returns a scatterplot of the selected continuous varables 
+        in the dataframe with the target variable indicating the categorical
+        variables.
+        
+        parameters
+        ----------
+        df: pandas DataFrame object
+        x: str
+        y:  str
+        target: str
+        """
     graph = Chart(
         df,
         title=f"{y} by {x} for {target}",
@@ -11,6 +23,10 @@ def chart(df, x, y, target) -> Chart:
         tooltip=Tooltip(df.columns.to_list())
     )
     return graph
+
+
+
+
 if __name__ == '__main__':
     import pandas as pd
     import altair_viewer

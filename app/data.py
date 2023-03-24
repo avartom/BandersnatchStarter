@@ -29,7 +29,7 @@ class Database():
         self.collection = self.database[collection]
         """
         Connects to database usning .env file with 
-        the name initialized to colletion
+        the name initialized to collection
         
         parameters
         ----------
