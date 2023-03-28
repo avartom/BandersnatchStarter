@@ -46,9 +46,9 @@ def view():
     db = Database('collection')
     options = ["age", "bmi", "bloodpressure", "gender", "claim", 
                "smoker", "children", "region", "diabetic"]
-    x_axis = request.values.get("x_axis") or options[1]
-    y_axis = request.values.get("y_axis") or options[2]
-    target = request.values.get("target") or options[4]
+    x_axis = request.values.get("x_axis") or options[2]
+    y_axis = request.values.get("y_axis") or options[4]
+    target = request.values.get("target") or options[5]
     graph = chart(
         df=db.dataframe(),
         x=x_axis,

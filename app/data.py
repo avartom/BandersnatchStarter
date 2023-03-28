@@ -48,10 +48,11 @@ class Database():
         """
         
     def reset(self):
-        self.collection.delete_many({})
         """
         Deletes all documents from the collection.
         """
+        self.collection.delete_many({})
+
 
     def count(self) -> int:
         """

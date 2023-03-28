@@ -1,5 +1,6 @@
 from altair import Chart, Tooltip
 
+
 def chart(df, x, y, target) -> Chart:
     """
         Returns a scatterplot of the selected continuous varables 
@@ -13,14 +14,20 @@ def chart(df, x, y, target) -> Chart:
         y:  str
         target: str
         """
+
+    title = f"{y.capitalize()} vs {x.capitalize()} for {target.capitalize()}"
     graph = Chart(
         df,
-        title=f"{y} by {x} for {target}",
+        autosize = "pad",
+        background='#aaaaaa',
+        title=title, 
+        padding={"left":10, "top":50, "right":10, "bottom":10}
     ).mark_circle(size=100).encode(
         x=x,
         y=y,
         color=target,
         tooltip=Tooltip(df.columns.to_list())
+    ).configure_title(fontSize=30, dy =-30, anchor='middle'
     )
     return graph
 

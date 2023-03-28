@@ -50,9 +50,10 @@
         <button name="submit">Regenerate Chart</button>
         <br class="clear">
     </form>
-
+    
     <div id="graph"></div>
     <script type="text/javascript">
         vegaEmbed('#graph', {{ graph | safe }});
     </script>
+   
 {% endblock %}
