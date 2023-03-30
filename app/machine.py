@@ -44,9 +44,7 @@ class Machine:
         features["region"] = le.fit_transform(features["region"])
         self.model.fit(features, target)
     
-    #def __call__(self,feature_basis: DataFrame):
-        # prediction, *_ = self.model.predict(feature_basis)
-        # return prediction
+
        
 
     def save(self, filepath):
@@ -105,4 +103,6 @@ if __name__ == '__main__':
     # machine = Machine.open("app/model.joblib")
     # prd = machine(X_test.iloc[:1])
     # X_test = X_test.drop(columns=["claim"])
-    print(le.inverse_transform([0,1, 2 ,3]))
+    #def __call__(self,feature_basis: DataFrame):
+    # prediction, *_ = self.model.predict(feature_basis)
+    # return prediction
